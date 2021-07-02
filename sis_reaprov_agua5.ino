@@ -147,7 +147,6 @@ void ExecutaMaquinaEstado(void){
         tempoFinal = 0;
         tempoInic = millis();
         while( tempoFinal - tempoInic < tolerancia_0ciclo && !estadoSensor == HIGH){
-          Serial.println("to esperando 3s pra o 2ciclo");
           tempoFinal = millis();
           estadoSensor = digitalRead(sensor);
         }
@@ -184,7 +183,6 @@ void ExecutaMaquinaEstado(void){
       if(!estadoSensor == HIGH){
         while(!estadoSensor == HIGH){  
           digitalWrite(rele,HIGH);
-          Serial.println("Estou aqui!");
           estadoSensor = digitalRead(sensor); 
         }
         tempoFinal = millis();
